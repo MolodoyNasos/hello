@@ -2,7 +2,7 @@
 :toc: macro
 :figure-caption: Рисунок
 
-toc::[]
+<<titulnik.adoc,Перейти к титульной странице>>
 
 == Введение
 
@@ -46,25 +46,6 @@ void __iar_program_start(void) {
 }
 ----
 
-== Организация памяти и сегменты
-
-Память в микроконтроллере организуется в сегменты:
-
-- **.text**: исполняемый код (размещается в ПЗУ).
-- **.data**: инициализированные переменные (ОЗУ).
-- **.bss**: нулевые/неинициализированные переменные (ОЗУ).
-- **.stack**: стек программы.
-- **.heap**: динамическая память.
-
-Настройка памяти выполняется через файл линковщика (.icf), где задаются адреса ПЗУ и ОЗУ.
-
-Пример настройки:
-[source,text]
-----
-define symbol __ICFEDIT_region_ROM_start__ = 0x08000000;
-define symbol __ICFEDIT_region_ROM_end__   = 0x0807FFFF;
-define region ROM_region = mem:[from __ICFEDIT_region_ROM_start__ to __ICFEDIT_region_ROM_end__];
-----
 
 == Отладка и загрузка
 
