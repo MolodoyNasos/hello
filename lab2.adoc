@@ -2,7 +2,9 @@
 :toc: macro
 :figure-caption: Рисунок
 
-<<titulnik.adoc,Перейти к титульной странице>>
+include::titulnik.adoc[]
+
+toc::[]
 
 == Введение
 
